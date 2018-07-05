@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.chris.onlinepdf.FileUtil;
 import com.chris.onlinepdf.PDFPagerAdapter;
-import com.chris.onlinepdf.RemotePDFViewPager;
+import com.chris.onlinepdf.OnlinePDFViewPager;
 import com.chris.onlinepdf.download.DownloadFile;
 
 public class MainActivity extends AppCompatActivity implements DownloadFile.Listener{
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements DownloadFile.List
 
     private PDFPagerAdapter adapter;
 
-    private RemotePDFViewPager remotePDFViewPager;
+    private OnlinePDFViewPager onlinePDFViewPager;
 
 
     String url = "https://static.miduo.com/group1/M00/01/38/CgECC1loNzWABdLYAAK4Lz7W2pc376.pdf";
@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity implements DownloadFile.List
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        remotePDFViewPager = new RemotePDFViewPager(this, url, this,false);
-        remotePDFViewPager.setId(R.id.pdf_viewpager);
+        onlinePDFViewPager = new OnlinePDFViewPager(this, url, this,false);
+        onlinePDFViewPager.setId(R.id.pdf_viewpager);
     }
 
     @Override
     public void onSuccess(String url, String destinationPath) {
         adapter = new PDFPagerAdapter(this, FileUtil.extractFileNameFromURL(url));
-        remotePDFViewPager.setAdapter(adapter);
-        setContentView(remotePDFViewPager);
+        onlinePDFViewPager.setAdapter(adapter);
+        setContentView(onlinePDFViewPager);
     }
 
     @Override

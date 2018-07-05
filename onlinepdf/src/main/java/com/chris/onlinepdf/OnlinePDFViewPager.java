@@ -20,7 +20,7 @@ import java.io.File;
  * @author Chris
  * @version 2018/7/5
  */
-public class RemotePDFViewPager extends ViewPager implements DownloadFile.Listener {
+public class OnlinePDFViewPager extends ViewPager implements DownloadFile.Listener {
 
     private static final String TAG = "RemotePDFViewPager";
 
@@ -29,7 +29,7 @@ public class RemotePDFViewPager extends ViewPager implements DownloadFile.Listen
     protected DownloadFile.Listener listener;
     protected Boolean isVertical = false;
 
-    public RemotePDFViewPager(Context context, String pdfUrl, DownloadFile.Listener listener,Boolean isVertical) {
+    public OnlinePDFViewPager(Context context, String pdfUrl, DownloadFile.Listener listener, Boolean isVertical) {
         super(context);
         this.context = context;
         this.listener = listener;
@@ -38,7 +38,7 @@ public class RemotePDFViewPager extends ViewPager implements DownloadFile.Listen
         init(new DownloadFileUrlConnectionImpl(context, new Handler(), this), pdfUrl);
     }
 
-    public RemotePDFViewPager(Context context,
+    public OnlinePDFViewPager(Context context,
                               DownloadFile downloadFile,
                               String pdfUrl,
                               DownloadFile.Listener listener) {
@@ -49,7 +49,7 @@ public class RemotePDFViewPager extends ViewPager implements DownloadFile.Listen
         init(downloadFile, pdfUrl);
     }
 
-    public RemotePDFViewPager(Context context, AttributeSet attrs) {
+    public OnlinePDFViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
 
