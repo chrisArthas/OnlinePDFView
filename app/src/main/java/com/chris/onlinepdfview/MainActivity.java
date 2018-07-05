@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements DownloadFile.List
     private RemotePDFViewPager remotePDFViewPager;
 
 
-    String url = "https://www.maiyabank.com/static/images/disclosure/2016.pdf";
+    String url = "https://static.miduo.com/group1/M00/01/38/CgECC1loNzWABdLYAAK4Lz7W2pc376.pdf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
